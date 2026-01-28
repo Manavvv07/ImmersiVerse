@@ -24,7 +24,6 @@ const Navbar = () => {
           </ul>
 
           <div className="flex justify-end items-center space-x-4">
-        
             <div className="hidden lg:flex space-x-4">
               <button className="cursor-pointer flex items-center justify-center py-2 px-3 border rounded-md">
                 Sign In
@@ -41,29 +40,44 @@ const Navbar = () => {
               {mobileDrawerOpen ? <X /> : <Menu />}
             </button>
           </div>
-
         </div>
 
-        {mobileDrawerOpen && (
-          <div className="lg:hidden mt-4 border-t border-neutral-700 pt-4">
-            <ul className="flex flex-col space-y-4  ">
-              {navItems.map((item, index) => (
-                <li key={index}>
-                  <a href={item.href}>{item.label}</a>
-                </li>
-              ))}
-              <a href="#" className="py-2 px-3 border rounded-md">
-                Sign In
-              </a>
-              <a
-                href="#"
-                className="bg-linear-to-r from-cyan-400 to-cyan-700 py-2 px-4 rounded-md"
-              >
-                Create an account
-              </a>
-            </ul>
+        {/* MOBILE DRAWER ANIMATION LOGIC:
+           1. We remove the conditional rendering ({mobileDrawerOpen && ...}) so the element is always in the DOM.
+           2. We toggle 'grid-rows-[1fr]' (open) vs 'grid-rows-[0fr]' (closed).
+           3. We toggle opacity for a smoother effect.
+           4. The inner div MUST have 'min-h-0' or 'overflow-hidden' for the grid transition to work.
+        */}
+        <div
+          className={`lg:hidden grid overflow-hidden transition-all duration-300 ease-in-out ${
+            mobileDrawerOpen
+              ? "grid-rows-[1fr] opacity-100"
+              : "grid-rows-[0fr] opacity-0"
+          }`}
+        >
+          <div className="overflow-hidden min-h-0">
+            <div className="mt-4 border-t border-neutral-700 pt-4">
+              <ul className="flex flex-col space-y-4">
+                {navItems.map((item, index) => (
+                  <li key={index}>
+                    <a href={item.href}>{item.label}</a>
+                  </li>
+                ))}
+                <div className="flex flex-col space-y-4 pt-2">
+                  <a href="#" className="py-2 px-3 border rounded-md text-center">
+                    Sign In
+                  </a>
+                  <a
+                    href="#"
+                    className="bg-linear-to-r from-cyan-400 to-cyan-700 py-2 px-4 rounded-md text-center"
+                  >
+                    Create an account
+                  </a>
+                </div>
+              </ul>
+            </div>
           </div>
-        )}
+        </div>
 
       </div>
     </nav>

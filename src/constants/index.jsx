@@ -5,13 +5,6 @@ import { ShieldHalf } from "lucide-react";
 import { PlugZap } from "lucide-react";
 import { GlobeLock } from "lucide-react";
 
-import user1 from "../assets/profile-pictures/user1.jpg";
-import user2 from "../assets/profile-pictures/user2.jpeg";
-import user3 from "../assets/profile-pictures/user3.jpeg";
-import user4 from "../assets/profile-pictures/user4.jpeg";
-import user5 from "../assets/profile-pictures/user5.jpeg";
-import user6 from "../assets/profile-pictures/user6.jpeg";
-
 export const navItems = [
   { label: "Features", href: "#" },
   { label: "Workflow", href: "#" },
@@ -23,37 +16,37 @@ export const testimonials = [
   {
     user: "Manav Singh",
     company: "Stellar Solutions",
-    image: user1,
+    image: "/assets/profile-pictures/user1.jpg",
     text: "I am extremely satisfied with the services provided. The team was responsive, professional, and delivered results beyond my expectations.",
   },
   {
     user: "Anish Yadav",
     company: "Blue Horizon Technologies",
-    image: user2,
+    image: "/assets/profile-pictures/user2.jpeg",
     text: "I couldn't be happier with the outcome of our project. The team's creativity and problem-solving skills were instrumental in bringing our vision to life",
   },
   {
     user: "Ameya Singh Chauhan",
     company: "Quantum Innovations",
-    image: user3,
+    image: "/assets/profile-pictures/user3.jpeg",
     text: "Working with this company was a pleasure. Their attention to detail and commitment to excellence are commendable. I would highly recommend them to anyone looking for top-notch service.",
   },
   {
     user: "Kirtan Chandak",
     company: "Fusion Dynamics",
-    image: user4,
+    image: "/assets/profile-pictures/user4.jpeg",
     text: "Working with the team at XYZ Company was a game-changer for our project. Their attention to detail and innovative solutions helped us achieve our goals faster than we thought possible. We are grateful for their expertise and professionalism!",
   },
   {
     user: "Raghav Sharma",
     company: "Visionary Creations",
-    image: user5,
+    image: "/assets/profile-pictures/user5.jpeg",
     text: "I am amazed by the level of professionalism and dedication shown by the team. They were able to exceed our expectations and deliver outstanding results.",
   },
   {
     user: "Ayush Yadav",
     company: "Synergy Systems",
-    image: user6,
+    image: "/assets/profile-pictures/user6.jpeg",
     text: "The team went above and beyond to ensure our project was a success. Their expertise and dedication are unmatched. I look forward to working with them again in the future.",
   },
 ];

@@ -1,6 +1,5 @@
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
-import logo from "../assets/logo.png"
 import { navItems } from "../constants"
 
 const Navbar = () => {
@@ -12,7 +11,7 @@ const Navbar = () => {
         <div className="grid grid-cols-2 lg:grid-cols-3 items-center">
 
           <div className="flex items-center">
-            <img className="h-10 w-20 mr-2" src={logo} alt="" />
+            <img className="h-10 w-20 mr-2" src="/assets/logo.png" alt="" />
             <span className="mt-1.5 text-xl tracking-tight">ImmersiVerse</span>
           </div>
 

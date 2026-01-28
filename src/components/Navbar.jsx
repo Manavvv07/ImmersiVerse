@@ -1,4 +1,3 @@
-import { Menu, X } from "lucide-react"
 import { useState } from "react"
 import { navItems } from "../constants"
 
@@ -33,21 +32,39 @@ const Navbar = () => {
               </button>
             </div>
 
+            {/* Morphing Hamburger Button */}
             <button
               onClick={() => setMobileDrawerOpen(!mobileDrawerOpen)}
-              className="lg:hidden ml-2"
+              className="lg:hidden ml-2 p-2 relative group"
             >
-              {mobileDrawerOpen ? <X /> : <Menu />}
+              {/* Container for the lines - height-4 (16px) is standard for this icon size */}
+              <div className="w-6 h-4 relative">
+                {/* Top Line: Rotates 45deg and moves to center (top-2) when open */}
+                <span
+                  className={`absolute left-0 w-full h-0.5 bg-neutral-300 transition-all duration-300 ease-in-out ${
+                    mobileDrawerOpen ? "top-2 rotate-45" : "top-0"
+                  }`}
+                />
+                
+                {/* Middle Line: Fades out when open */}
+                <span
+                  className={`absolute left-0 top-2 w-full h-0.5 bg-neutral-300 transition-all duration-300 ease-in-out ${
+                    mobileDrawerOpen ? "opacity-0" : "opacity-100"
+                  }`}
+                />
+                
+                {/* Bottom Line: Rotates -45deg and moves to center (top-2) when open */}
+                <span
+                  className={`absolute left-0 w-full h-0.5 bg-neutral-300 transition-all duration-300 ease-in-out ${
+                    mobileDrawerOpen ? "top-2 -rotate-45" : "top-4"
+                  }`}
+                />
+              </div>
             </button>
           </div>
         </div>
 
-        {/* MOBILE DRAWER ANIMATION LOGIC:
-           1. We remove the conditional rendering ({mobileDrawerOpen && ...}) so the element is always in the DOM.
-           2. We toggle 'grid-rows-[1fr]' (open) vs 'grid-rows-[0fr]' (closed).
-           3. We toggle opacity for a smoother effect.
-           4. The inner div MUST have 'min-h-0' or 'overflow-hidden' for the grid transition to work.
-        */}
+        {/* Mobile Drawer with smooth height animation */}
         <div
           className={`lg:hidden grid overflow-hidden transition-all duration-300 ease-in-out ${
             mobileDrawerOpen

@@ -21,13 +21,13 @@ export const testimonials = [
   },
   {
     user: "Anish Yadav",
-    company: "Blue Horizon Technologies",
+    company: "Quantum Innovations",
     image: "/assets/profile-pictures/user2.jpeg",
     text: "I couldn't be happier with the outcome of our project. The team's creativity and problem-solving skills were instrumental in bringing our vision to life",
   },
   {
     user: "Ameya Singh Chauhan",
-    company: "Quantum Innovations",
+    company: "Blue Horizon Technologies",
     image: "/assets/profile-pictures/user3.jpeg",
     text: "Working with this company was a pleasure. Their attention to detail and commitment to excellence are commendable. I would highly recommend them to anyone looking for top-notch service.",
   },

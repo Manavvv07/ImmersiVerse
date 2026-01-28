@@ -3,7 +3,7 @@ const FeatureSection = () => {
   return (
     <div className="relative mt-20 border-b border-neutral-800 min-h-200">
         <div className="text-center">
-            <span className="bg-neutral-900 text-cyan-500 rounded-full h-6 text-md font-medium px-2 py-1 uppercase">
+            <span className="bg-neutral-900 text-cyan-500 rounded-full h-6 text-4xl font-medium px-2 py-1 uppercase">
                 features 
             </span>
             <h2 className="text-2xl sm:text-5xl lg:text-5xl mt-7 lg:mt-15 tracking-wide">

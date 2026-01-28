@@ -32,28 +32,23 @@ const Navbar = () => {
               </button>
             </div>
 
-            {/* Morphing Hamburger Button */}
             <button
               onClick={() => setMobileDrawerOpen(!mobileDrawerOpen)}
               className="lg:hidden ml-2 p-2 relative group"
             >
-              {/* Container for the lines - height-4 (16px) is standard for this icon size */}
               <div className="w-6 h-4 relative">
-                {/* Top Line: Rotates 45deg and moves to center (top-2) when open */}
                 <span
                   className={`absolute left-0 w-full h-0.5 bg-neutral-300 transition-all duration-300 ease-in-out ${
                     mobileDrawerOpen ? "top-2 rotate-45" : "top-0"
                   }`}
                 />
                 
-                {/* Middle Line: Fades out when open */}
                 <span
                   className={`absolute left-0 top-2 w-full h-0.5 bg-neutral-300 transition-all duration-300 ease-in-out ${
                     mobileDrawerOpen ? "opacity-0" : "opacity-100"
                   }`}
                 />
                 
-                {/* Bottom Line: Rotates -45deg and moves to center (top-2) when open */}
                 <span
                   className={`absolute left-0 w-full h-0.5 bg-neutral-300 transition-all duration-300 ease-in-out ${
                     mobileDrawerOpen ? "top-2 -rotate-45" : "top-4"
@@ -64,7 +59,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Drawer with smooth height animation */}
         <div
           className={`lg:hidden grid overflow-hidden transition-all duration-300 ease-in-out ${
             mobileDrawerOpen
